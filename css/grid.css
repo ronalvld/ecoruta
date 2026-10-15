@@ -5,14 +5,77 @@
 
 /* Actividad 1: cabecera y hero */
 
+/* Actividad 1: cabecera y hero */
+
+.cabecera {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu ul { display: grid; grid-auto-flow: column; gap: 1.5rem; }
+
+.hero {
+    display: grid;
+    place-items: center;
+}
+/* Actividad 2: tarjetas */
 
 /* Actividad 2: tarjetas */
 
+.tarjetas {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 1.5rem;
+}
 
+.tarjeta {
+     display: grid;
+     grid-template-rows: auto 1fr auto;
+}
+/* Actividad 3: estructura y pie */
 /* Actividad 3: estructura y pie */
 
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    grid-template-areas: "principal lateral";
+    gap: 2rem;
+    align-items: start;
+}
+.principal { grid-area: principal; min-width: 0; }
+.lateral { grid-area: lateral; }
+
+.pie-columnas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
 
 /* Actividad 4: galería */
+/* Actividad 4: galería */
 
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
 
 /* Actividad 5: adaptación a pantallas pequeñas */
+/* Actividad 5: adaptación a pantallas pequeñas */
+
+@media (max-width: 768px) {
+    .cabecera {
+        grid-template-columns: auto;
+        justify-content: center;
+        justify-items: center;
+        gap: .5rem;
+        padding: .5rem 1rem;
+    }
+    .contenedor {
+        grid-template-columns: 1fr;
+        grid-template-areas: "principal" "lateral";
+    }
+    .tarjetas, .pie-columnas { grid-template-columns: 1fr; gap: 1rem; }
+    .galeria { grid-template-columns: repeat(2, 1fr); }
+}
